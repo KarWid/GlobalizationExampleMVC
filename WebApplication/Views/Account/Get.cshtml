@@ -1,0 +1,37 @@
+﻿@model WebApplication.Models.Account.AccountVM
+
+@{
+    ViewBag.Title = "View";
+}
+
+@if (string.IsNullOrEmpty(Model.Nickname))
+{
+    <h4>No account to display</h4>
+    return;
+}
+
+<div>
+    <h4>Account</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nickname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nickname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Create", "Create", new { }) |
+</p>
